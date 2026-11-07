@@ -1,0 +1,50 @@
+{
+  "name": "ravex-os",
+  "version": "0.5.0",
+  "description": "RAVEX OS desktop experience for Windows, powered by Electron and Chromium",
+  "main": "src/main.js",
+  "author": "RAVEX Software and Licenses",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.ravex.os",
+    "productName": "RAVEX OS",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "RAVEX OS",
+      "runAfterFinish": true,
+      "installerLanguages": [
+        "es_ES"
+      ],
+      "language": "3082"
+    }
+  }
+}

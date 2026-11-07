@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAVEX Browser</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#171b26;color:#f5f6fa;font:14px Arial,sans-serif}
+.toolbar{height:58px;display:flex;align-items:center;gap:8px;padding:9px 13px;background:#222735;border-bottom:1px solid #ffffff18}
+button{border:0;border-radius:9px;background:#343c4e;color:white;padding:9px 12px;cursor:pointer;font-size:15px}
+button:hover{background:#477fe0}.brand{font-weight:800;letter-spacing:1px;color:#91b8ff;margin:0 7px}
+form{display:flex;flex:1;gap:8px}.address{flex:1;min-width:80px;background:#111621;border:1px solid #ffffff20;color:white;border-radius:10px;padding:10px 13px;outline:none}
+.address:focus{border-color:#5792ff}.go{background:#397be8;font-size:13px;font-weight:bold}
+</style>
+</head>
+<body>
+<header class="toolbar">
+  <span class="brand">RAVEX</span>
+  <button id="back" title="Atrás">←</button>
+  <button id="forward" title="Adelante">→</button>
+  <button id="reload" title="Recargar">↻</button>
+  <button id="home" title="Inicio">⌂</button>
+  <form id="addressForm">
+    <input class="address" id="address" value="https://www.google.com" placeholder="Buscar o escribir una dirección">
+    <button class="go" type="submit">Ir</button>
+  </form>
+</header>
+<script>
+const address = document.getElementById("address");
+document.getElementById("addressForm").addEventListener("submit", event => {
+  event.preventDefault();
+  window.ravexBrowser.navigate(address.value);
+});
+document.getElementById("back").onclick = () => window.ravexBrowser.back();
+document.getElementById("forward").onclick = () => window.ravexBrowser.forward();
+document.getElementById("reload").onclick = () => window.ravexBrowser.reload();
+document.getElementById("home").onclick = () => {
+  address.value = "https://www.google.com";
+  window.ravexBrowser.home();
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#101522;color:#f7f8fc;overflow:hidden}
+#desktop{height:100vh;position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 25%,#315c9b 0%,transparent 42%),radial-gradient(ellipse at 20% 85%,#293d70 0%,transparent 45%),linear-gradient(135deg,#101522,#192746)}
+.topbar{height:38px;background:#0c1120a8;backdrop-filter:blur(20px);display:flex;align-items:center;gap:18px;padding:0 18px;font-size:12px}
+.topbar strong{letter-spacing:1.5px}.clock{margin-left:auto}
+.welcome{position:absolute;left:8%;top:22%;text-shadow:0 3px 25px #0005}.welcome-label{font-size:11px;letter-spacing:3px;color:#b5cfff}
+h1{font-size:clamp(42px,7vw,82px);line-height:.98;margin:18px 0;font-weight:750;letter-spacing:-4px}
+h1 span{color:#83b1ff}.welcome p{color:#c0cce2;margin-bottom:25px}
+button{font:inherit;cursor:pointer}.primary{background:#4b8cff;color:white;border:0;border-radius:10px;padding:12px 17px;font-weight:bold}
+.dock{position:absolute;bottom:17px;left:50%;transform:translateX(-50%);display:flex;gap:10px;padding:10px 13px;border:1px solid #ffffff25;background:#111827a8;backdrop-filter:blur(25px);border-radius:19px}
+.dock button{width:49px;height:49px;border:0;border-radius:13px;background:#ffffff17;color:white;font-size:25px;transition:.18s}
+.dock button:hover{transform:translateY(-7px);background:#ffffff30}
+.app-window{position:absolute;top:9%;left:50%;transform:translateX(-50%);width:min(850px,92vw);height:min(570px,76vh);background:#171d2bf2;border:1px solid #ffffff25;border-radius:15px;box-shadow:0 25px 80px #0008;overflow:hidden;display:flex;flex-direction:column}
+.hidden{display:none!important}.window-bar{height:43px;flex-shrink:0;background:#252d3d;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #ffffff15;font-size:13px}
+.traffic{position:absolute;left:14px;display:flex;gap:7px}.dot{width:12px;height:12px;border:0;border-radius:50%;padding:0}.red{background:#ff6058}.yellow{background:#ffbd2e}.green{background:#28c840}
+.window-body{padding:20px;overflow:auto;flex:1}.app-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px}
+.app-card{background:#ffffff0c;border:1px solid #ffffff17;border-radius:13px;padding:18px 10px;text-align:center;color:white}
+.app-card:hover{background:#ffffff19}.app-card .emoji{font-size:34px;margin-bottom:10px}.app-card strong{display:block}.app-card small{display:block;color:#aebbd0;margin-top:5px}
+.panel{background:#ffffff0c;border:1px solid #ffffff17;border-radius:12px;padding:16px;margin-bottom:12px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.muted{color:#aebbd0;font-size:13px}
+input,textarea{font:inherit;color:white;background:#111827;border:1px solid #ffffff25;border-radius:8px;padding:10px;width:100%;margin:6px 0}
+textarea{min-height:170px;resize:vertical}.action{border:0;background:#397be8;color:white;border-radius:8px;padding:9px 12px;margin:4px}
+.file-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}.file-item{background:#ffffff0c;border:1px solid #ffffff17;border-radius:10px;padding:14px;text-align:center;cursor:pointer}.file-item span{display:block;font-size:30px;margin-bottom:7px}
+body.light #desktop{background:linear-gradient(135deg,#dce8fa,#f5f7fc)}body.light .welcome{color:#17233c;text-shadow:none}body.light .welcome p{color:#53627a}
+@media(max-width:600px){.welcome{left:7%;top:18%}.app-window{top:7%;height:78vh}.dock{gap:5px}.dock button{width:43px;height:43px}}

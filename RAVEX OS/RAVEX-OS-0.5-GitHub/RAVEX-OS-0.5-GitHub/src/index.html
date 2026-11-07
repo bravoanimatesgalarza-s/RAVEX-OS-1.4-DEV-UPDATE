@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAVEX OS 0.5</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="desktop">
+  <header class="topbar">
+    <strong>RAVEX</strong><span>OS 0.5</span><span id="activeApp">Escritorio</span>
+    <span class="clock" id="clock"></span>
+  </header>
+
+  <section class="welcome">
+    <div class="welcome-label">RAVEX SOFTWARE AND LICENSES</div>
+    <h1>Tu espacio.<br><span>Tu sistema.</span></h1>
+    <p>Bienvenido a RAVEX OS 0.5</p>
+    <button class="primary" onclick="openApp('launchpad')">Abrir Launchpad ↗</button>
+  </section>
+
+  <section class="app-window hidden" id="appWindow">
+    <div class="window-bar">
+      <div class="traffic">
+        <button class="dot red" onclick="closeApp()"></button>
+        <button class="dot yellow" onclick="minimizeApp()"></button>
+        <button class="dot green" onclick="maximizeApp()"></button>
+      </div>
+      <strong id="windowTitle">Aplicación</strong>
+    </div>
+    <div class="window-body" id="windowBody"></div>
+  </section>
+
+  <nav class="dock">
+    <button onclick="openApp('launchpad')" title="Launchpad">▦</button>
+    <button onclick="openApp('explorer')" title="Explorer">📁</button>
+    <button onclick="window.ravex.openBrowser()" title="RAVEX Browser">🌐</button>
+    <button onclick="openApp('notes')" title="Notas">📝</button>
+    <button onclick="openApp('settings')" title="Ajustes">⚙️</button>
+  </nav>
+</div>
+<script src="renderer.js"></script>
+</body>
+</html>
